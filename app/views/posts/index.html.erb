@@ -1,0 +1,8 @@
+This is cool.
+
+<% @posts.each do |p| %>
+	<%= p.description %>
+	<%= link_to "Go!", p.link %>
+	<% end %>
+
+<%= link_to "New Post", new_post_path %>
