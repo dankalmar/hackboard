@@ -5,9 +5,9 @@ This is cool.
 	<%= link_to "Go!", p.link %>
 <ul>
 	<li>
-	<% p.comments.each do |c| %>
-	<%= c.body %>
-	<% end %>
+	<%= render p.comments %>
+	<%= render 'comments/form',
+				comment: p.comments.build %>
 	</li>
 	<% end %>
 </ul>
