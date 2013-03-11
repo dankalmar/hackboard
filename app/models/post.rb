@@ -4,7 +4,9 @@ class Post < ActiveRecord::Base
 validates :description, presence: true
 validates :link, presence: true,
 				format: /^http:\/\/.+$/
+validates :user, presence: true
 
 has_many :comments
+belongs_to :user
 
 end
