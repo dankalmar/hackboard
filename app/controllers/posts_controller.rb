@@ -1,7 +1,19 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+	
+		if params[:user_id]
+			@posts = User.find(params[:user_id]).posts	
+		else
+			@posts = Post
+		end
+			@posts = @posts.includes(:comments)
+
 	end
+
+	def mine
+		@posts = current_user.posts.all
+	end
+
 
 	def new
 		@posts = Post.new

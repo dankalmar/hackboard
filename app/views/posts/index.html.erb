@@ -5,10 +5,12 @@ This is cool.
 	<%= link_to "Go!", p.link %>
 <ul>
 	<li>
+		User: <%= p.user.name %>
 	<%= render p.comments %>
 	<%= render 'comments/form',
-				comment: p.comments.build %>
+				comment: p.comments.build, post: p %>
 	</li>
 	<% end %>
 </ul>
 <%= link_to "New Post", new_post_path %>
+

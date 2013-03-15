@@ -1,0 +1,9 @@
+	<%= post.description %>
+	<%= link_to "Go!", post.link %>
+
+
+	<li>
+	<%= render post.comments %>
+	<%= render 'comments/form',
+				comment: post.comments.build, post: post %>
+	</li>
